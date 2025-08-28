@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocaloid - Mundo da Música Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#teto">Kasane Teto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="inicio">
+        <h1>Bem-vindo ao Mundo Vocaloid</h1>
+        <p>A música virtual que conquistou o mundo!</p>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h2>O que é Vocaloid?</h2>
+        <p>Vocaloid é um software de síntese vocal desenvolvido pela Yamaha que permite criar músicas utilizando vozes virtuais. Personagens como Hatsune Miku se tornaram ícones da cultura pop japonesa e mundial.</p>
+    </section>
+
+    <section id="personagens" class="personagens">
+        <h2>Personagens Principais</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/miku.png" alt="Hatsune Miku">
+                <h3>Hatsune Miku</h3>
+            </div>
+            <div class="card">
+                <img src="assets/rin.png" alt="Rin Kagamine">
+                <h3>Rin Kagamine</h3>
+            </div>
+            <div class="card">
+                <img src="assets/len.png" alt="Len Kagamine">
+                <h3>Len Kagamine</h3>
+            </div>
+            <div class="card">
+                <img src="assets/luka.png" alt="Megurine Luka">
+                <h3>Megurine Luka</h3>
+            </div>
+            <div class="card">
+                <img src="assets/kaito.png" alt="Kaito">
+                <h3>Kaito</h3>
+            </div>
+            <div class="card">
+                <img src="assets/meiko.png" alt="Meiko">
+                <h3>Meiko</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="videos">
+        <h2>Assista Alguns Vídeos</h2>
+        <div class="video-container">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/dE3PBa-SIIA" title="Vídeo 1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/H3iunm8csyk" title="Vídeo 2" frameborder="0" allowfullscreen></iframe>
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/rjQWrjMX3fg" title="Vídeo 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="teto" class="teto">
+        <h2>Mérito Especial: Kasane Teto</h2>
+        <img src="assets/teto.png" alt="Kasane Teto">
+        <p>Kasane Teto começou como um personagem fictício, mas ganhou tanto amor dos fãs que se tornou parte da história Vocaloid. Seu visual e voz marcantes conquistaram todos!</p>
+        <div class="video-container">
+            <iframe width="360" height="215" src="https://www.youtube.com/embed/7gee79nA4x0" title="Kasane Teto Vídeo Especial" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>Feito com 💖 para fãs de Vocaloid.</p>
+    </footer>
+
+    <script>
+        // Rolagem suave ao clicar nos links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in ao rolar
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
